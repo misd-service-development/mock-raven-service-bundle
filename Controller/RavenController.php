@@ -41,8 +41,10 @@ class RavenController extends ContainerAware
         $params = $request->query->get('params');
 
         if (null === $ver) {
+            $this->container->get('session')->start(); // prevent session RuntimeException in <= Symfony 2.1.4
             return new Response('Error in request parameters: Missing required parameter &#39;ver&#39;');
         } elseif (null === $url) {
+            $this->container->get('session')->start(); // prevent session RuntimeException in <= Symfony 2.1.4
             return new Response('Error in request parameters: Missing required parameter &#39;url&#39;');
         }
 
