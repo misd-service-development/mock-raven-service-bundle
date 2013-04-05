@@ -16,15 +16,31 @@ use Symfony\Component\HttpFoundation\Response as AppResponse;
 
 class RavenControllerTest extends WebTestCase
 {
-    public function testRaven()
+    /**
+     * @dataProvider ravenProvider
+     */
+    public function testRaven($ver, $url, $params)
     {
         $client = static::createClient();
 
-        $client->request('GET', '/auth/authenticate.html');
+        $client->request('GET', '/auth/authenticate.html', array('ver' => $ver, 'url' => $url, 'params' => $params));
 
         /** @var AppResponse $response */
         $response = $client->getResponse();
 
         $this->assertTrue($response->isRedirect());
+        $this->assertStringStartsWith($url, $response->headers->get('Location'));
+        if (null !== $params) {
+            $this->assertContains(urlencode($params), $response->headers->get('Location'));
+        }
+    }
+
+    public function ravenProvider()
+    {
+        return array(
+            array(1, 'http://localhost/foo', null),
+            array(2, 'http://localhost/foo?query=key', null),
+            array(2, 'http://localhost/foo?query=key', 'one=two'),
+        );
     }
 }
