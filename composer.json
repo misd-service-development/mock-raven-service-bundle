@@ -1,0 +1,33 @@
+{
+    "name": "misd/mock-raven-service-bundle",
+    "type": "symfony-bundle",
+    "description": "Provides a controller replicating the Raven service, allow applications to functionally test the logging in process",
+    "keywords": ["authentication", "bundle", "test", "University of Cambridge"],
+    "homepage": "https://github.com/misd-service-development/mock-raven-service-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Wilkinson",
+            "email": "chris.wilkinson@admin.cam.ac.uk"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/misd-service-development/mock-raven-service-bundle/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "ext-openssl": "*",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Misd\\MockRavenServiceBundle": ""
+        }
+    },
+    "target-dir": "Misd/MockRavenServiceBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
