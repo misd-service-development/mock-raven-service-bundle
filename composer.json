@@ -19,6 +19,12 @@
         "ext-openssl": "*",
         "symfony/framework-bundle": "~2.1"
     },
+    "require-dev": {
+        "symfony/browser-kit": "~2.2",
+        "symfony/class-loader": "~2.2",
+        "symfony/finder": "~2.2",
+        "symfony/yaml": "~2.2"
+    },
     "autoload": {
         "psr-0": {
             "Misd\\MockRavenServiceBundle": ""

@@ -1,0 +1,3 @@
+MisdMockRavenServiceBundle:
+    resource: .
+    type: extra
