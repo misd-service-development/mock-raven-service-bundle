@@ -43,4 +43,30 @@ class RavenControllerTest extends WebTestCase
             array(2, 'http://localhost/foo?query=key', 'one=two'),
         );
     }
+
+    public function testRavenMissingVer()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/auth/authenticate.html');
+
+        /** @var AppResponse $response */
+        $response = $client->getResponse();
+
+        $this->assertFalse($response->isRedirect());
+        $this->assertContains('Missing required parameter', $response->getContent());
+    }
+
+    public function testRavenMissingUrl()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/auth/authenticate.html', array('ver' => 2));
+
+        /** @var AppResponse $response */
+        $response = $client->getResponse();
+
+        $this->assertFalse($response->isRedirect());
+        $this->assertContains('Missing required parameter', $response->getContent());
+    }
 }

@@ -16,6 +16,7 @@ use Misd\MockRavenServiceBundle\WlsResponse\WlsResponseInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Raven controller.
@@ -35,7 +36,15 @@ class RavenController extends ContainerAware
      */
     public function authenticateAction(Request $request)
     {
-        $query = $request->query;
+        $ver = $request->query->get('ver');
+        $url = $request->query->get('url');
+        $params = $request->query->get('params');
+
+        if (null === $ver) {
+            return new Response('Error in request parameters: Missing required parameter &#39;ver&#39;');
+        } elseif (null === $url) {
+            return new Response('Error in request parameters: Missing required parameter &#39;url&#39;');
+        }
 
         $wlsResponse = $this->container->get('session')->get('next_wls_response');
         $this->container->get('session')->set('next_wls_response', null);
@@ -44,12 +53,11 @@ class RavenController extends ContainerAware
             $wlsResponse = new SuccessWlsResponse();
         }
 
-        $wlsResponse->setVer($query->get('ver'));
-        $wlsResponse->setUrl($query->get('url'));
-        $wlsResponse->setParams($query->get('params'));
+        $wlsResponse->setVer($ver);
+        $wlsResponse->setUrl($url);
+        $wlsResponse->setParams($params);
 
-        $redirect = $query->get('url') .
-            (false !== strpos($query->get('url'), '?') ? '&' : '?') .
+        $redirect = $url . (false !== strpos($url, '?') ? '&' : '?') .
             'WLS-Response=' . urlencode(implode('!', $wlsResponse->getResponse()));
 
         return new RedirectResponse($redirect);
