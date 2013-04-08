@@ -11,10 +11,10 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class AuthenticationCancelledWlsResponse extends AbstractWlsResponse
+class GeneralRequestParameterError extends AbstractWlsResponse
 {
     protected function getStatus()
     {
-        return 410;
+        return 530;
     }
 }

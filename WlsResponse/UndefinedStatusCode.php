@@ -11,10 +11,10 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class AuthenticationDeclinedWlsResponse extends AbstractWlsResponse
+class UndefinedStatusCode extends AbstractWlsResponse
 {
     protected function getStatus()
     {
-        return 570;
+        return 999;
     }
 }

@@ -11,10 +11,10 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class NoMutuallyAcceptableAuthenticationTypesAvailableWlsResponse extends AbstractWlsResponse
+class AuthenticationCancelled extends AbstractWlsResponse
 {
     protected function getStatus()
     {
-        return 510;
+        return 410;
     }
 }

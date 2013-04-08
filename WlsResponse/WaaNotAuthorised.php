@@ -11,7 +11,7 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class WaaNotAuthorisedWlsResponse extends AbstractWlsResponse
+class WaaNotAuthorised extends AbstractWlsResponse
 {
     protected function getStatus()
     {

@@ -11,7 +11,7 @@
 
 namespace Misd\MockRavenServiceBundle\Controller;
 
-use Misd\MockRavenServiceBundle\WlsResponse\SuccessWlsResponse;
+use Misd\MockRavenServiceBundle\WlsResponse\SuccessfulAuthentication;
 use Misd\MockRavenServiceBundle\WlsResponse\WlsResponseInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -54,7 +54,7 @@ class RavenController extends ContainerAware
         $this->container->get('session')->set('next_wls_response', null);
 
         if (false === $wlsResponse instanceof WlsResponseInterface) {
-            $wlsResponse = new SuccessWlsResponse();
+            $wlsResponse = new SuccessfulAuthentication();
         }
 
         $wlsResponse->setVer($ver);

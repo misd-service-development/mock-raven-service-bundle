@@ -11,7 +11,7 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class InteractionWouldBeRequiredWlsResponse extends AbstractWlsResponse
+class InteractionWouldBeRequired extends AbstractWlsResponse
 {
     protected function getStatus()
     {

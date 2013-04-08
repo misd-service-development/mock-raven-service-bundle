@@ -11,7 +11,7 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class UnsupportedProtocolVersionWlsResponse extends AbstractWlsResponse
+class UnsupportedProtocolVersion extends AbstractWlsResponse
 {
     protected function getStatus()
     {

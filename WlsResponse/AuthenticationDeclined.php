@@ -11,22 +11,10 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class SuccessfulAuthenticationWlsResponse extends AbstractWlsResponse
+class AuthenticationDeclined extends AbstractWlsResponse
 {
-    private $principal;
-
-    public function __construct($principal = 'test0001')
-    {
-        $this->principal = $principal;
-    }
-
     protected function getStatus()
     {
-        return 200;
-    }
-
-    public function getPrincipal()
-    {
-        return $this->principal;
+        return 570;
     }
 }
