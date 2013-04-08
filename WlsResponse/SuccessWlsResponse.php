@@ -20,6 +20,11 @@ class SuccessWlsResponse extends AbstractWlsResponse
         $this->principal = $principal;
     }
 
+    protected function getStatus()
+    {
+        return 200;
+    }
+
     public function getPrincipal()
     {
         return $this->principal;

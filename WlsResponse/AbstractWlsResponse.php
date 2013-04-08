@@ -52,10 +52,7 @@ abstract class AbstractWlsResponse implements WlsResponseInterface
         $this->params = $params;
     }
 
-    protected function getStatus()
-    {
-        return 200;
-    }
+    abstract protected function getStatus();
 
     protected function getMsg()
     {
