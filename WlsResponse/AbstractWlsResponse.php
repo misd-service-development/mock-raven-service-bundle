@@ -18,15 +18,9 @@ namespace Misd\MockRavenServiceBundle\WlsResponse;
  */
 abstract class AbstractWlsResponse implements WlsResponseInterface
 {
-    private $principal;
     private $ver;
     private $url;
     private $params;
-
-    public function __construct($principal = 'test0001')
-    {
-        $this->principal = $principal;
-    }
 
     protected function getVer()
     {
@@ -80,7 +74,7 @@ abstract class AbstractWlsResponse implements WlsResponseInterface
 
     protected function getPrincipal()
     {
-        return $this->principal;
+        return '';
     }
 
     protected function getAuth()

@@ -13,4 +13,15 @@ namespace Misd\MockRavenServiceBundle\WlsResponse;
 
 class SuccessWlsResponse extends AbstractWlsResponse
 {
+    private $principal;
+
+    public function __construct($principal = 'test0001')
+    {
+        $this->principal = $principal;
+    }
+
+    public function getPrincipal()
+    {
+        return $this->principal;
+    }
 }
