@@ -11,7 +11,7 @@
 
 namespace Misd\MockRavenServiceBundle\WlsResponse;
 
-class SuccessWlsResponse extends AbstractWlsResponse
+class SuccessfulAuthenticationWlsResponse extends AbstractWlsResponse
 {
     private $principal;
 
