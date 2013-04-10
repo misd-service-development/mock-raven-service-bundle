@@ -9,7 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Misd\MockRavenServiceBundle\WlsResponse;
+namespace Misd\MockRavenServiceBundle\WlsResponse\Invalid;
+
+use Misd\MockRavenServiceBundle\WlsResponse\AbstractWlsResponse;
 
 class UndefinedStatusCode extends AbstractWlsResponse
 {
