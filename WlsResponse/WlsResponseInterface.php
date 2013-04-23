@@ -18,10 +18,25 @@ namespace Misd\MockRavenServiceBundle\WlsResponse;
  */
 interface WlsResponseInterface
 {
+    /**
+     * Set the ver parameter.
+     *
+     * @param $ver
+     */
     public function setVer($ver);
 
+    /**
+     * Set the url parameter.
+     *
+     * @param $url
+     */
     public function setUrl($url);
 
+    /**
+     * Set the params parameter.
+     *
+     * @param $params
+     */
     public function setParams($params);
 
     /**
