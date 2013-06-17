@@ -27,7 +27,7 @@ Installation
            // ...
            "require-dev": {
                // ...
-               "misd/raven-bundle": "~1.0@dev"
+               "misd/mock-raven-service-bundle": "~1.0@dev"
            }
         }
 
