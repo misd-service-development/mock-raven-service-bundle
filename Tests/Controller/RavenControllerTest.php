@@ -12,7 +12,6 @@
 namespace Misd\MockRavenServiceBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Response as AppResponse;
 
 class RavenControllerTest extends WebTestCase
 {
@@ -25,7 +24,6 @@ class RavenControllerTest extends WebTestCase
 
         $client->request('GET', '/auth/authenticate.html', array('ver' => $ver, 'url' => $url, 'params' => $params));
 
-        /** @var AppResponse $response */
         $response = $client->getResponse();
 
         $this->assertTrue($response->isRedirect());
@@ -50,7 +48,6 @@ class RavenControllerTest extends WebTestCase
 
         $client->request('GET', '/auth/authenticate.html');
 
-        /** @var AppResponse $response */
         $response = $client->getResponse();
 
         $this->assertFalse($response->isRedirect());
@@ -63,7 +60,6 @@ class RavenControllerTest extends WebTestCase
 
         $client->request('GET', '/auth/authenticate.html', array('ver' => 2));
 
-        /** @var AppResponse $response */
         $response = $client->getResponse();
 
         $this->assertFalse($response->isRedirect());
