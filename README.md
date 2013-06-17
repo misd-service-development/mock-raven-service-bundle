@@ -57,9 +57,8 @@ Installation
 
         // app/routing_test.yml
 
-        MisdMockRavenServiceBundle:
-            resource: .
-            type: extra
+        misd_mock_raven_service:
+            resource: "@MisdMockRavenServiceBundle/Resources/config/routing.yml"
 
  5. Make sure that the mock Raven service path is unsecured:
 

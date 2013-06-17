@@ -1,3 +1,2 @@
-MisdMockRavenServiceBundle:
-    resource: .
-    type: extra
+misd_mock_raven_service:
+    resource: "@MisdMockRavenServiceBundle/Resources/config/routing.yml"
